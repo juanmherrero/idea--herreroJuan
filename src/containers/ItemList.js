@@ -11,7 +11,7 @@ import shoes from '../img/shoes.png';
 import customFetch from '../utils/customFetch';
 import { useEffect, useState } from "react";
 
-const dataList = [
+export const dataList = [
     {
         title: "Esquíes Fischer Rc4 The Curv Ti",
         brand: "Fischer",
@@ -76,6 +76,8 @@ const dataList = [
         price: "$15 000"
     }
 ]
+
+
 
 const ItemList = () => {
     const [data, setData] = useState([]);
