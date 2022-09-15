@@ -2,34 +2,11 @@ import ItemCount from './ItemCount';
 import Item from './Item';
 import customFetch from '../utils/customFetch';
 import { useEffect, useState } from "react";
-const { dataList } = require('../containers/ItemList')
+import { dataList } from '../containers/ItemList';
+import ItemListContainer from './ItemListContainer';
 
 
 const ItemDetail = ({item}) => {
-    /* const [data, setData] = useState([]);
-    const onAdd = (qty) => {
-        alert("You have selected " + qty + " items.");
-    }
-
-    return (
-        <>
-        {
-        item
-        ?
-        data.map(item =>(
-            <Item
-            key={item.id}
-            title={item.title}
-            brand={item.brand}
-            thumbnail={item.thumbnail}
-            description={item.description} 
-            price={item.price}/>
-            ))
-        :<p></p>}
-        <ItemCount/>
-        </>
-    );
-} */
 const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -40,18 +17,18 @@ const [data, setData] = useState([]);
 
     return (
         <>
-        {
-        data.map(item =>(
-            <Item
-            key={item.id}
-            title={item.title}
-            brand={item.brand}
-            thumbnail={item.thumbnail}
-            description={item.description} 
-            price={item.price}/>
-            ))
-            }
-        <ItemCount/>
+        <div className="producto-container">
+            <h3>{item.title}</h3>
+            <div className="producto-image">
+            <img src={item.thumbnail} alt="Same alt value" />
+            </div>
+            <div className="producto-info">
+            <h4>Marca: {item.brand}</h4>
+            <p>Detalle: {item.description}</p>
+            <h4>Precio: {item.price}</h4>
+            <ItemListContainer ></ItemListContainer>
+            </div>
+        </div>
         </>
         );
 }
