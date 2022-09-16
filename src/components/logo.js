@@ -1,9 +1,10 @@
-import logo from "../img/logChicoDos.png"
+import logo from "../img/logChicoDos.png";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
     return (
         <div id="logo">
-            <img src={logo}></img>
+            <Link to='/'><img src={logo}></img></Link>
         </div>
     );
 }

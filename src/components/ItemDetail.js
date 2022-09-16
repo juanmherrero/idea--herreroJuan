@@ -26,7 +26,6 @@ const [data, setData] = useState([]);
             <h4>Marca: {item.brand}</h4>
             <p>Detalle: {item.description}</p>
             <h4>Precio: {item.price}</h4>
-            <ItemListContainer ></ItemListContainer>
             </div>
         </div>
         </>
