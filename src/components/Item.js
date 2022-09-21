@@ -1,7 +1,7 @@
-import ItemListContainer from "./ItemListContainer";
+import { Link } from "react-router-dom";
 
 
-const Item = ({thumbnail, title, brand, description, price}) => {
+const Item = ({thumbnail, title, brand, description, price, id}) => {
     return (
         <div className="producto-container">
             <h3>{title}</h3>
@@ -12,6 +12,7 @@ const Item = ({thumbnail, title, brand, description, price}) => {
             <h4>Marca: {brand}</h4>
             <p>Detalle: {description}</p>
             <h4>Precio: {price}</h4>
+            <Link to={`/item/${id}`}><button class="button-54" role="button">Ver</button></Link>
             {/* <ItemListContainer ></ItemListContainer> */}
             </div>
         </div>

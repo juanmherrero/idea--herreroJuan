@@ -3,14 +3,16 @@ import Logo from "./components/logo";
 import ItemList from "./containers/ItemList";
 import './App.css';
 import ItemDetailContainer from "./components/ItemDetailContainer";
+import Home from "./pages/home";
 
 export default function App() {
   return (
     <div>
-      <Logo />
-      <Header></Header>
+      {/* <Logo />
+      <Header></Header> */}
       {/* <ItemList /> */}
-      <ItemDetailContainer />
+      <Home></Home>
+      {/* <ItemDetailContainer /> */}
     </div>
   );
 }
