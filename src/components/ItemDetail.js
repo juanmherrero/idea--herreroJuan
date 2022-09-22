@@ -4,11 +4,16 @@ import customFetch from '../utils/customFetch';
 import { useEffect, useState } from "react";
 import { dataList } from '../containers/ItemList';
 import ItemListContainer from './ItemListContainer';
+import { Link } from "react-router-dom";
 
 
 const ItemDetail = ({item}) => {
-const [data, setData] = useState([]);
-
+    const [itemCount, setItemCount] = useState(0);
+    const [data, setData] = useState([]);
+    const onAdd = (qty) => {
+        alert ("Se han agregado " + qty + " productos.");
+        setItemCount(qty);
+}
     useEffect(() => {
         customFetch(2000, dataList)
             .then(datos => setData(dataList))
@@ -27,6 +32,11 @@ const [data, setData] = useState([]);
             <p>Detalle: {item.description}</p>
             <h4>Precio: {item.price}</h4>
             </div>
+            {
+                itemCount === 0
+                ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+                : <Link to ='/carro'><button class="button-54" role="button">Ir al Carro</button></Link>
+            }
         </div>
         </>
         );

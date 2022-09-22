@@ -10,6 +10,7 @@ import tabSk82 from '../img/tabSk82.png';
 import shoes from '../img/shoes.png';
 import customFetch from '../utils/customFetch';
 import { useEffect, useState } from "react";
+
 /* import { dataList } from '../utils/productos'; */
 
 /* export const dataList = [
@@ -86,7 +87,8 @@ export const dataList = [
         thumbnail: fischer1,
         description: "Carrera - Pista",
         price: "$250 000",
-        category: 10
+        category: 10,
+        stock: 5
     },
     {
         id:2,
@@ -95,7 +97,8 @@ export const dataList = [
         thumbnail: fischer2,
         description: "Pista",
         price: "$200 000",
-        category: 10
+        category: 10,
+        stock: 3
     },
     {
         id:3,
@@ -104,7 +107,8 @@ export const dataList = [
         thumbnail: burton1,
         description: "Pista",
         price: "$220 000",
-        category: 10
+        category: 10,
+        stock: 4
     },
     {
         id:4,
@@ -114,7 +118,8 @@ export const dataList = [
         thumbnail: burton2,
         description: "Fuera de Pista - Pista",
         price: "$290 000",
-        category: 10
+        category: 10,
+        stock: 2
     },
     {
         id:5,
@@ -123,7 +128,8 @@ export const dataList = [
         thumbnail: botSki,
         description: "Esquí",
         price: "$150 000",
-        category: 10
+        category: 10,
+        stock: 6
     },
     {
         id:6,
@@ -132,7 +138,8 @@ export const dataList = [
         thumbnail: botSnow,
         description: "Snowboard",
         price: "$135 000",
-        category: 10
+        category: 10,
+        stock: 3
     },
     {
         id:7,
@@ -141,7 +148,8 @@ export const dataList = [
         thumbnail: tabSk81,
         description: "Con trucks",
         price: "$25 000",
-        category: 20
+        category: 20,
+        stock: 9
     },
     {
         id:8,
@@ -150,7 +158,8 @@ export const dataList = [
         thumbnail: tabSk82,
         description: "Con trucks",
         price: "$35 000",
-        category: 20
+        category: 20,
+        stock: 7
     },
     {
         id:9,
@@ -159,12 +168,13 @@ export const dataList = [
         thumbnail: shoes,
         description: "Skate - Urbanas",
         price: "$15 000",
-        category: 20
+        category: 20,
+        stock: 12
     }
 ]
 
-const ItemList = () => {
-    const [data, setData] = useState([]);
+const ItemList = ({ items }) => {
+    const [datos, setData] = useState([]);
 
     useEffect(() => {
         customFetch(2000, dataList)
@@ -173,8 +183,20 @@ const ItemList = () => {
     },[]);
 
     return (
-        <>
-        {
+        items.map(item => 
+            <Item 
+            key={item.id} 
+            id={item.id} 
+            title={item.title} 
+            brand={item.brand} 
+            description={item.description} 
+            price={item.price} 
+            thumbnail={item.thumbnail} 
+            stock={item.stock} />)
+        );
+}
+
+{/* {
         data.map(item =>(
             <Item
             key={item.id}
@@ -186,9 +208,7 @@ const ItemList = () => {
             description={item.description} 
             price={item.price}/>
             ))
-            }
-            </>
-        );
-}
+            } */}
+
 
 export default ItemList;

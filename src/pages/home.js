@@ -5,6 +5,7 @@ import NavBar from "../components/NavBar";
 import Logo from "../components/logo";
 import Header from "../components/NavBar";
 import ItemDetail from "../components/ItemDetail";
+import Carrito from "../components/Carrito";
 
 const Home = () => {
     return (
@@ -15,7 +16,9 @@ const Home = () => {
                 <Route path='/' element={<ItemListContainer />} />
                 <Route path='/category/:idCategory' element={<ItemListContainer />} />
                 <Route path='/item/:idItem' element={<ItemDetailContainer />} />
+                <Route path='/carro' element={<Carrito/>}/>
             </Routes>
+            
         </BrowserRouter>
     );
 }

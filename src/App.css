@@ -8,16 +8,18 @@ h1 {
 }
 a {
   font-family: "Open Sans", sans-serif;
-  margin: 10px;
+  /* margin: 10px; */
   color: white;
   text-decoration: none;
 }
 .h33 {
   font-family: "Open Sans", sans-serif;
-  margin: 10px;
+  margin: 30px;
   color: white;
   text-decoration: none;
+  display: inline;
 }
+
 #hd {
   font-family: "Open Sans", sans-serif;
   background-color: #07070A;
@@ -43,7 +45,7 @@ a {
   margin: 10px;
 }
 
-/* CSS */
+
 .button-54 {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
