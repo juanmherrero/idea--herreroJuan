@@ -173,8 +173,8 @@ export const dataList = [
     }
 ]
 
-const ItemList = () => {
-    const [data, setData] = useState([]);
+const ItemList = ({ items }) => {
+    const [datos, setData] = useState([]);
 
     useEffect(() => {
         customFetch(2000, dataList)
@@ -183,8 +183,20 @@ const ItemList = () => {
     },[]);
 
     return (
-        <>
-        {
+        items.map(item => 
+            <Item 
+            key={item.id} 
+            id={item.id} 
+            title={item.title} 
+            brand={item.brand} 
+            description={item.description} 
+            price={item.price} 
+            thumbnail={item.thumbnail} 
+            stock={item.stock} />)
+        );
+}
+
+{/* {
         data.map(item =>(
             <Item
             key={item.id}
@@ -196,10 +208,7 @@ const ItemList = () => {
             description={item.description} 
             price={item.price}/>
             ))
-            }
-            
-            </>
-        );
-}
+            } */}
+
 
 export default ItemList;
