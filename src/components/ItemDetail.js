@@ -5,15 +5,21 @@ import { useEffect, useState } from "react";
 import { dataList } from '../containers/ItemList';
 import ItemListContainer from './ItemListContainer';
 import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import { CartContext } from './CartContext';
 
 
 const ItemDetail = ({item}) => {
     const [itemCount, setItemCount] = useState(0);
+    const ctx = useContext(CartContext);
     const [data, setData] = useState([]);
+
     const onAdd = (qty) => {
         alert ("Se han agregado " + qty + " productos.");
         setItemCount(qty);
-}
+        ctx.addItem(item, qty);
+    }
+
     useEffect(() => {
         customFetch(2000, dataList)
             .then(datos => setData(dataList))
@@ -30,7 +36,8 @@ const ItemDetail = ({item}) => {
             <div className="producto-info">
             <h4>Marca: {item.brand}</h4>
             <p>Detalle: {item.description}</p>
-            <h4>Precio: {item.price}</h4>
+            <h4>Precio: ${item.price}</h4>
+            <p>Stock: {item.stock}</p>
             </div>
             {
                 itemCount === 0

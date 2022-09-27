@@ -44,7 +44,10 @@ a {
 .producto-container button{
   margin: 10px;
 }
-
+.titCarro{
+  color: #07070A;
+  text-align: center;
+}
 
 .button-54 {
   font-family: "Open Sans", sans-serif;
