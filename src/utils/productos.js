@@ -8,87 +8,95 @@ import tabSk81 from '../img/tabSk81.png';
 import tabSk82 from '../img/tabSk82.png';
 import shoes from '../img/shoes.png';
 
-export const dataList = [
+dataList = [
     {
         id:1,
         title: "Esquíes Fischer Rc4 The Curv Ti",
         brand:"Fischer",
-        thumbnail: fischer1,
-        description: "Carrera -Pista",
-        price: "$250 000",
-        category:10
+        thumbnail: ["https://res.cloudinary.com/dbr4xs4sh/image/upload/v1664490942/imh/fischer1_exafrl.png"],
+        description: "Carrera - Pista",
+        price: 250000 ,
+        category: 10,
+        stock: 5
     },
     {
         id:2,
         title: "Esquies Fischer XTR RC One 73 RT + RS 10 GW",
         brand:"Fischer",
-        thumbnail: fischer2,
+        thumbnail: ["https://res.cloudinary.com/dbr4xs4sh/image/upload/v1664490941/imh/fischer2_tgdrqw.png"],
         description: "Pista",
-        price: "$200 000",
-        category:10
+        price: 200000,
+        category: 10,
+        stock: 3
     },
     {
         id:3,
         title: "Snowboard Burton Ripcord",
         brand: "Burton",
-        thumbnail: burton1,
+        thumbnail: ["https://res.cloudinary.com/dbr4xs4sh/image/upload/v1664490941/imh/burton1_liiiyi.png"],
         description: "Pista",
-        price: "$220 000",
-        category: 10
+        price: 220000,
+        category: 10,
+        stock: 4
     },
     {
         id:4,
         title: "Snowboard Burton Custom Camber",
-        brand:"Burton"
-        ,
-        thumbnail: burton2,
+        brand:"Burton",
+        thumbnail: ["https://res.cloudinary.com/dbr4xs4sh/image/upload/v1664490941/imh/burton2_gwisyv.png"],
         description: "Fuera de Pista - Pista",
-        price: "$290 000",
-        category: 10
+        price: 290000,
+        category: 10,
+        stock: 2
     },
     {
         id:5,
         title: "Botas Fischer RC One 100 Vacuum Walk",
         brand: "Fischer",
-        thumbnail: botSki,
+        thumbnail: ["https://res.cloudinary.com/dbr4xs4sh/image/upload/v1664490942/imh/botSki_o92gm8.png"],
         description: "Esquí",
-        price: "$150 000",
-        category: 10
+        price: 150000,
+        category: 10,
+        stock: 6
     },
     {
         id:6,
         title: "Botas Salomon Launch",
         brand: "Salomon",
-        thumbnail: botSnow,
+        thumbnail: ["https://res.cloudinary.com/dbr4xs4sh/image/upload/v1664490941/imh/botSnow_nuhc2l.png"],
         description: "Snowboard",
-        price: "$135 000",
-        category: 10
+        price: 135000,
+        category: 10,
+        stock: 3
     },
     {
         id:7,
         title: "Skateboard Element Tecuala",
         brand:"Element",
-        thumbnail: tabSk81,
+        thumbnail: ["https://res.cloudinary.com/dbr4xs4sh/image/upload/v1664490941/imh/tabSk81_bygj3f.png"],
         description: "Con trucks",
-        price: "$25 000",
-        category: 20
+        price: 25000,
+        category: 20,
+        stock: 9
     },
     {
         id:8,
         title: "Skateboard Element Solar Vibes",
         brand: "Element",
-        thumbnail: tabSk82,
+        thumbnail: ["https://res.cloudinary.com/dbr4xs4sh/image/upload/v1664490942/imh/tabSk82_gz3nas.png"],
         description: "Con trucks",
-        price: "$35 000",
-        category: 20
+        price: 35000,
+        category: 20,
+        stock: 7
     },
     {
         id:9,
         title: "Zapatillas skateboard Vans Old Skool Pro",
         brand: "Vans",
-        thumbnail: shoes,
+        thumbnail: ["https://res.cloudinary.com/dbr4xs4sh/image/upload/v1664490941/imh/shoes_i7pwwz.png"],
         description: "Skate - Urbanas",
-        price: "$15 000",
-        category: 20
+        price: 15000,
+        category: 20,
+        stock: 12
     }
 ]
