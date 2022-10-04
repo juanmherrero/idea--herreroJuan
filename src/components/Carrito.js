@@ -5,7 +5,15 @@ import { CartContext } from "./CartContext";
 
 const Carrito = () => {
     const ctx = useContext(CartContext);
-
+if(ctx.cartList.length === 0){
+        return (
+            <>
+            <h1 class="titCarro">Carro de compras</h1>
+            <h2>El carro está vacío</h2>
+            <Link to ='/'><button class="button-54" role="button">Ir al inicio</button></Link>
+            </>
+        )
+    }else{
     return (
         <>
             <h1 class="titCarro">Carro de compras</h1>
@@ -26,7 +34,7 @@ const Carrito = () => {
             <button onClick={ctx.clear} class="button-54" role="button">Vaciar Carrito</button>
             
         </>
-    );
+    );}
 }
 
 export default Carrito;
