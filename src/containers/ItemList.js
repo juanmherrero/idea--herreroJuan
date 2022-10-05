@@ -19,7 +19,7 @@ import { useEffect, useState } from "react";
         brand: "Fischer",
         thumbnail: fischer1,
         description: "Carrera -Pista",
-        price: "$250 000"
+        price: $250000
     },
     {
         title: "Esquies Fischer XTR RC One 73 RT + RS 10 GW",
