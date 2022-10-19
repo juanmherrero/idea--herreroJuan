@@ -11,74 +11,6 @@ import shoes from '../img/shoes.png';
 import customFetch from '../utils/customFetch';
 import { useEffect, useState } from "react";
 
-/* import { dataList } from '../utils/productos'; */
-
-/* export const dataList = [
-    {
-        title: "Esquíes Fischer Rc4 The Curv Ti",
-        brand: "Fischer",
-        thumbnail: fischer1,
-        description: "Carrera -Pista",
-        price: "$250 000"
-    },
-    {
-        title: "Esquies Fischer XTR RC One 73 RT + RS 10 GW",
-        brand: "Fischer",
-        thumbnail: fischer2,
-        description: "Pista",
-        price: "$200 000"
-    },
-    {
-        title: "Snowboard Burton Ripcord",
-        brand: "Burton",
-        thumbnail: burton1,
-        description: "Pista",
-        price: "$220 000"
-    },
-    {
-        title: "Snowboard Burton Custom Camber",
-        brand: "Burton",
-        thumbnail: burton2,
-        description: "Fuera de Pista - Pista",
-        price: "$290 000"
-    },
-    {
-        title: "Botas Fischer RC One 100 Vacuum Walk",
-        brand: "Fischer",
-        thumbnail: botSki,
-        description: "Esquí",
-        price: "$150 000"
-    },
-    {
-        title: "Botas Salomon Launch",
-        brand: "Salomon",
-        thumbnail: botSnow,
-        description: "Snowboard",
-        price: "$135 000"
-    },
-    {
-        title: "Skateboard Element Tecuala",
-        brand: "Element",
-        thumbnail: tabSk81,
-        description: "Con trucks",
-        price: "$25 000"
-    },
-    {
-        title: "Skateboard Element Solar Vibes",
-        brand: "Element",
-        thumbnail: tabSk82,
-        description: "Con trucks",
-        price: "$35 000"
-    },
-    {
-        title: "Zapatillas skateboard Vans Old Skool Pro",
-        brand: "Vans",
-        thumbnail: shoes,
-        description: "Skate - Urbanas",
-        price: "$15 000"
-    }
-] */
-
 export const dataList = [
     {
         id:1,
@@ -86,7 +18,7 @@ export const dataList = [
         brand:"Fischer",
         thumbnail: fischer1,
         description: "Carrera - Pista",
-        price: "$250 000",
+        price: 250000 ,
         category: 10,
         stock: 5
     },
@@ -96,7 +28,7 @@ export const dataList = [
         brand:"Fischer",
         thumbnail: fischer2,
         description: "Pista",
-        price: "$200 000",
+        price: 200000,
         category: 10,
         stock: 3
     },
@@ -106,7 +38,7 @@ export const dataList = [
         brand: "Burton",
         thumbnail: burton1,
         description: "Pista",
-        price: "$220 000",
+        price: 220000,
         category: 10,
         stock: 4
     },
@@ -117,7 +49,7 @@ export const dataList = [
         ,
         thumbnail: burton2,
         description: "Fuera de Pista - Pista",
-        price: "$290 000",
+        price: 290000,
         category: 10,
         stock: 2
     },
@@ -127,7 +59,7 @@ export const dataList = [
         brand: "Fischer",
         thumbnail: botSki,
         description: "Esquí",
-        price: "$150 000",
+        price: 150000,
         category: 10,
         stock: 6
     },
@@ -137,7 +69,7 @@ export const dataList = [
         brand: "Salomon",
         thumbnail: botSnow,
         description: "Snowboard",
-        price: "$135 000",
+        price: 135000,
         category: 10,
         stock: 3
     },
@@ -147,7 +79,7 @@ export const dataList = [
         brand:"Element",
         thumbnail: tabSk81,
         description: "Con trucks",
-        price: "$25 000",
+        price: 25000,
         category: 20,
         stock: 9
     },
@@ -157,7 +89,7 @@ export const dataList = [
         brand: "Element",
         thumbnail: tabSk82,
         description: "Con trucks",
-        price: "$35 000",
+        price: 35000,
         category: 20,
         stock: 7
     },
@@ -167,38 +99,30 @@ export const dataList = [
         brand: "Vans",
         thumbnail: shoes,
         description: "Skate - Urbanas",
-        price: "$15 000",
+        price: 15000,
         category: 20,
         stock: 12
     }
 ]
 
-const ItemList = () => {
-    const [data, setData] = useState([]);
-
+const ItemList = ({ items }) => {
+    const [datos, setData] = useState([]);
     useEffect(() => {
         customFetch(2000, dataList)
             .then(datos => setData(dataList))
             .catch(err => console.log(err))
     },[]);
-
     return (
-        <>
-        {
-        data.map(item =>(
-            <Item
-            key={item.id}
-            id={item.id}
-            category={item.category}
-            title={item.title}
-            brand={item.brand}
-            thumbnail={item.thumbnail}
+        items.map(item => 
+            <Item 
+            key={item.id} 
+            id={item.id} 
+            title={item.title} 
+            brand={item.brand} 
             description={item.description} 
-            price={item.price}/>
-            ))
-            }
-            
-            </>
+            price={item.price} 
+            thumbnail={item.thumbnail} 
+            stock={item.stock} />)
         );
 }
 

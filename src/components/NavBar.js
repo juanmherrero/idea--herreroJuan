@@ -9,13 +9,7 @@ const Header = () => {
                 <Link to='/'><h1>Huemul Clothes</h1></Link>
                 <Link to='/category/10'><h3 className="h33">Snow</h3></Link>
                 <Link to='/category/20'><h3 className="h33">Skate</h3></Link>
-                <Link to='/carro'><Carro /></Link>
-                {/* <Link to='/'><h3>Huemul Clothes</h3></Link> */}
-                {/* <a href="">Productos</a>
-                <a href="">Contacto</a>
-                <a href="">Preguntas Frecuentes</a>
-                <a href="">Sobre nosotros</a> */}
-                
+                <Link to='/carro'><Carro /></Link>               
             </div>
         </div>
     );
